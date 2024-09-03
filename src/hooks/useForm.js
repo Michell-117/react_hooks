@@ -10,7 +10,7 @@ export const useForm = (formulario = {})=>{
             ...formState,
             [name]: value
         })
-        console.log(formState);
+        // console.log(formState);
     }
 
     const resetearFormulario=()=>{
@@ -18,7 +18,7 @@ export const useForm = (formulario = {})=>{
     }
 
     return {
-        formState,
+        ...formState,
         actualizarFormulario,
         resetearFormulario
     }

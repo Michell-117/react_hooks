@@ -55,7 +55,7 @@ export default function SimpleForm() {
             }
 
             <input 
-            onChange={onInputChange}
+                onChange={onInputChange}
                 type="email"
                 className="form-control mt-2"
                 placeholder="user@gmail.com"

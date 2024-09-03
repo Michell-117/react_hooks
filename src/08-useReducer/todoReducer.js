@@ -1,12 +1,13 @@
 
-export const todoReducer = (initialState,action)=>{
+export const todoReducer = (initialState=[],action)=>{
 
     switch (action.type) {
-        case 'abc':
+        case '[TAREA] Agregar tarea':
             
-            throw new Error("action = abc no esta implementado");
+            return [...initialState,action.payload]
             
-    
+        case'[TAREA] Eliminar tarea':
+            return initialState.filter(tarea=>tarea.id !== action.payload)
         default:
             return initialState;
     }
