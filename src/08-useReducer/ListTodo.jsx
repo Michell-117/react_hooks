@@ -1,14 +1,15 @@
 import React from 'react'
 import { ItemTodo } from './ItemTodo'
 
-export const ListTodo = ({todos=[]}) => {
+export const ListTodo = ({todos=[],eliminarTarea,marcarTerminado} ) => {
+    
 
     return(
         <>
             <ul className='list-group'>
                 {
                     todos.map(todo=>(
-                        <ItemTodo key={todo.id} tarea={todo.description} />
+                        <ItemTodo key={todo.id} tarea={todo} eliminarTarea={eliminarTarea} marcarTerminado={marcarTerminado}/>
                         
                     ))
                     

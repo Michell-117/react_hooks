@@ -8,6 +8,18 @@ export const todoReducer = (initialState=[],action)=>{
             
         case'[TAREA] Eliminar tarea':
             return initialState.filter(tarea=>tarea.id !== action.payload)
+            
+        case'[TAREA] Marcar tarea finalizada':
+            return initialState.map( tarea =>{
+                if( tarea.id === action.payload){
+                    return {
+                        ...tarea,
+                        done: !tarea.done
+                    }
+                }
+                return tarea
+            })
+            
         default:
             return initialState;
     }

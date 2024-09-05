@@ -1,16 +1,23 @@
 
-export const ItemTodo = ({tarea}) => {
-    const eliminarTarea = (event)=>{
-        console.log(event);
-    }
+export const ItemTodo = ({tarea, eliminarTarea, marcarTerminado}) => {
+
+  
 
     return(
         <>
             <li className='list-group-item d-flex justify-content-between'>
-                    <span className='align-self-center'>{tarea}</span>
+
+                    <span 
+                        className={`align-self-center ${tarea.done ? 'text-decoration-line-through': ''}`}
+                        onClick={ ()=>marcarTerminado(tarea.id) }
+                    >
+                        {tarea.description}
+                    </span>
+
                     <button 
-                    onClick={eliminarTarea}
                         className='btn btn-danger'
+                        onClick={ ()=>eliminarTarea(tarea.id) }
+                        // onClick={eliminarTarea(tarea.id)}
                     >
                         Borrar
                     </button>
