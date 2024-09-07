@@ -1,8 +1,15 @@
 body{
-    padding: 20px;
+    margin: 0;
+    padding: 10px;
     background-color: lightgray;
 }
 
 button{
     margin-right: 10px;
 }
+
+a{
+    margin-right: 10px;
+    color: whitesmoke;
+}
+
